@@ -1,0 +1,32 @@
+﻿@model services.ModelsS.TblDbKullanici
+@{
+
+    Layout = "";
+}
+<link href="~/css/kayit.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kullanıcı Girişi</title>
+    <link href="~/css/frkn.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1>Kullanıcı Girişi</h1>
+        <form asp-action="giris" asp-controller="KayitOlma" method="post">
+            <label for="username">Kullanıcı Adı:</label>
+            <input type="text" id="kullaniciAd" name="kullaniciAd" placeholder="Kullanıcı adınızı girin">
+            <br />
+            <label for="password">Şifre:</label>
+            <input type="password" id="kullaniciSifre" name="kullaniciSifre" placeholder="Şifrenizi girin">
+
+
+            <br />
+            <label for="kullaniciEmail">E-posta Adresi:</label>
+            <input type="email" id="kullaniciEmail" name="kullaniciEmail">
+            <br />
+            <input type="submit" value="Giriş Yap">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model services.ModelsS.TblDbTatli
+@{
+
+    Layout = "_Layout2";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/css/Ekle.css" rel="stylesheet" />
+</head>
+<body>
+  
+
+<div class="row">
+    <div class="col-md-4">
+            <form action="/TblDbTatlis/kayital" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TatliAd" class="control-label"></label>
+                <input asp-for="TatliAd" class="form-control" />
+                <span asp-validation-for="TatliAd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TatliFiyat" class="control-label"></label>
+                <input asp-for="TatliFiyat" class="form-control" />
+                <span asp-validation-for="TatliFiyat" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label for="file">Resim Dosyası:</label>
+                    <input type="file" id="file" name="file" class="form-control-file" />
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Olustur" />
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

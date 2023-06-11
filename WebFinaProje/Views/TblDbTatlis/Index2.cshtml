@@ -1,0 +1,50 @@
+﻿@{
+
+    Layout = "_Layout2";
+}
+
+@model IEnumerable<services.ModelsS.TblDbTatli>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/indexler2.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <div align="center" style="height:50px;color:brown"> Tatlilar</div>
+    <table style="width:100%">
+        <tr>
+
+            <th>Tatli AD</th>
+            <th>Tatli Fiyat</th>
+            <th>Tatli Resim</th>
+            <th>SIL</th>
+            <th>Guncelle</th>
+
+        </tr>
+        <tbody>
+            @foreach (var crb in Model)
+            {
+                <tr>
+
+
+                    <td>@crb.TatliAd</td>
+                    <td>@crb.TatliFiyat</td>
+                    <td> <img style="width:100px;height:100px" src="@crb.TatliResim" /> </td>
+                    <td><a href="/TblDbTatlis/SIL/@crb.TatliId" class="button button-red">Sil</a></td>
+                    <td><a href="/TblDbTatlis/Guncelle/@crb.TatliId" class="button button-blue">Guncelle</a></td>
+
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+    
+    <div class="button-container">
+        <button onclick="window.location.href='/TblDbTatlis/Olustur'" class="button button-custom">Olustur</button>
+    </div>
+</body>
+</html>

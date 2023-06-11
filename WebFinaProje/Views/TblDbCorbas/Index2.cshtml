@@ -1,0 +1,42 @@
+﻿@model IEnumerable<services.ModelsS.TblDbCorba>
+
+@{
+
+    Layout = "_Layout2";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/indexler2.css" rel="stylesheet" />
+    <title>Corba</title>
+</head>
+<body>
+    <div class="header">Corbalar</div>
+    <table class="corba-table">
+        <tr>
+            <th>Corba AD</th>
+            <th>Corba Fiyat</th>
+            <th>corba resim</th>
+            <th>SIL</th>
+            <th>Guncelle</th>
+        </tr>
+        <tbody>
+            @foreach (var crb in Model)
+            {
+                <tr>
+                    <td>@crb.CorbaAd</td>
+                    <td>@crb.CorbaFiyat</td>
+                    <td> <img class="corba-image" src="@crb.CorbaResim" /> </td>
+                    <td><a href="/TblDbCorbas/SIL/@crb.CorbaId" class="button button-red">Sil</a></td>
+                    <td><a href="/TblDbCorbas/Guncelle/@crb.CorbaId" class="button button-blue">Guncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        <button onclick="window.location.href='/TblDbCorbas/Olustur'" class="button button-custom">Olustur</button>
+    </div>
+</body>
+</html>

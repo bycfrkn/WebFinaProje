@@ -1,0 +1,70 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model services.ModelsS.TblDbKullanici
+@{
+
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kayıt Formu</title>
+    
+    <link href="~/css/kayit.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Kayıt Formu</h2>
+        <form asp-controller="KayitOlma" asp-action="olustur" method="post">
+           
+            <label for="kullaniciAd">Kullanıcı Adı:</label>
+            <input type="text" id="kullaniciAd" name="kullaniciAd" required>
+            <br />
+            <label for="kullaniciSoyad">Kullanıcı Soyadı:</label>
+            <input type="text" id="kullaniciSoyad" name="kullaniciSoyad" required>
+            <br />
+            <label for="kullaniciEmail">E-posta Adresi:</label>
+            <input type="email" id="kullaniciEmail" name="kullaniciEmail" required >
+            <br />
+            <label for="kullaniciSifre">Şifre:</label>
+            <input type="password" id="kullaniciSifre" name="kullaniciSifre" required>
+            <br />
+            <input type="submit" value="Kaydet">
+        </form>
+        <a href="/KayitOlma/Index2">
+            <input type="submit" value="Giriş">
+        </a>
+    </div>
+
+    <script>
+ 
+        function validateForm() {
+            var kullaniciAd = document.getElementById("kullaniciAd").value;
+            var kullaniciSoyad = document.getElementById("kullaniciSoyad").value;
+            var kullaniciEmail = document.getElementById("kullaniciEmail").value;
+            var kullaniciSifre = document.getElementById("kullaniciSifre").value;
+
+            
+            if (kullaniciAd == "" || kullaniciSoyad == "" || kullaniciEmail == "" || kullaniciSifre == "") {
+                alert("Lütfen tüm alanları doldurun.");
+                return false;
+            }
+
+    
+            
+            if (!emailRegex.test(kullaniciEmail)) {
+                alert("Geçerli bir e-posta adresi girin.");
+                return false;
+            }
+
+            if (kullaniciSifre.length < 6) {
+                alert("Şifreniz en az 6 karakter uzunluğunda olmalıdır.");
+                return false;
+            }
+
+   
+
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<link href="~/css/frkn.css" rel="stylesheet" />
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="~/icon.ico" />
+</head>
+<body>
+
+    <div class="sidenav">
+
+
+        @Html.ActionLink("Anasayfa", "Index", "Anasayfa");
+        @Html.ActionLink("Menu", "Index", "Menu");
+        @Html.ActionLink("Iletisim", "Index", "Iletisim");
+        @Html.ActionLink("Hakkimizda", "Index", "Hakkimizda");
+        @Html.ActionLink("Cikis", "Index", "KayitOlma");
+    </div>
+
+    <div class="content">
+
+        @RenderBody()
+
+
+    </div>
+
+
+</body>
+</html>

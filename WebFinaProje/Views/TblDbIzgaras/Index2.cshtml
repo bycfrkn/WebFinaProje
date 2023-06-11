@@ -1,0 +1,48 @@
+﻿@model IEnumerable<services.ModelsS.TblDbIzgara>
+@{
+
+    Layout = "_Layout2";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/indexler2.css" rel="stylesheet" />
+    <title>Izgara</title>
+</head>
+<body>
+    <div align="center" style="height:50px;color:brown"> Izgaralar</div>
+    <table style="width:100%">
+        <tr>
+
+            <th>Izgara AD</th>
+            <th>Izgara Fiyat</th>
+            <th>Izgara Resim</th>
+            <th>SIl</th>
+            <th>Guncelle</th>
+
+        </tr>
+        <tbody>
+            @foreach (var crb in Model)
+            {
+                <tr>
+
+
+                    <td>@crb.IzgaraAd</td>
+                    <td>@crb.IzgaraFiyat</td>
+                    <td> <img style="width:100px;height:100px" src="@crb.IzgaraResim" /> </td>
+                    <td><a href="/TblDbIzgaras/SIL/@crb.IzgaraId" class="button button-red">Sil</a></td>
+                    <td><a href="/TblDbIzgaras/Guncelle/@crb.IzgaraId" class="button button-blue">Guncelle</a></td>
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+    <div class="button-container">
+        <button onclick="window.location.href='/TblDbIzgaras/Olustur'" class="button button-custom">Olustur</button>
+    </div>
+
+</body>
+</html>
+

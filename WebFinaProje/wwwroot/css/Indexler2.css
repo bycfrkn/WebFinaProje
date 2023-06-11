@@ -1,0 +1,62 @@
+﻿table, th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+body {
+    background-image: url('../../content/resimler/arkaplann.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header {
+    height: 50px;
+    color: brown;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.corba-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .corba-table th,
+    .corba-table td {
+        padding: 10px;
+        text-align: center;
+    }
+
+.corba-image {
+    width: 100px;
+    height: 100px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 6px;
+    outline: none;
+}
+
+.button-red {
+    background-color: red;
+}
+
+.button-blue {
+    background-color: blue;
+}
+
+.button-custom {
+    background-color: #4ed0ac; /* Replace with your custom color */
+}

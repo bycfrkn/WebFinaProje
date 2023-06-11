@@ -1,0 +1,58 @@
+﻿@model IEnumerable<services.ModelsS.TblDbIzgara>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/indexler.css" rel="stylesheet" />
+    <title>Izgara</title>
+</head>
+<body>
+    <div align="center" style="height:50px;color:brown"> Izgaralar</div>
+    <table style="width:100%">
+        <tr>
+
+            <th>Izgara AD</th>
+            <th>Izgara Fiyat</th>
+            <th>Izgara Resim</th>
+
+        </tr>
+        <tbody>
+            @foreach (var crb in Model)
+            {
+                <tr>
+
+
+                    <td>@crb.IzgaraAd</td>
+                    <td>@crb.IzgaraFiyat</td>
+                    <td> <img style="width:100px;height:100px" src="@crb.IzgaraResim" /> </td>
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+    <button onclick="gizleGoster('menuler');"> Diger Menuler</button>
+    <div id="menuler" style="display:none">
+        <ul>
+            <li><a class="button" href="/TblDbCorbas/Index">corba</a></li>
+
+            <li><a class="button" href="/TblDbSalatums/Index">Salata</a></li>
+            <li><a class="button" href="/TblDbTatlis/Index">Tatli</a></li>
+            <li> <a class="button" href="/TblDbIceceklers/Index">Icecek</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function gizleGoster(ID) {
+        var secilenID = document.getElementById(ID);
+        if (secilenID.style.display == "none") {
+            secilenID.style.display = "";
+        } else {
+            secilenID.style.display = "none";
+        }
+    }
+</script>

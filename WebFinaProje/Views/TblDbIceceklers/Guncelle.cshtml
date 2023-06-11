@@ -1,0 +1,49 @@
+﻿@model services.ModelsS.TblDbIcecekler
+@{
+
+    Layout = "_Layout2";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/css/Ekle.css" rel="stylesheet" />
+</head>
+<body>
+ 
+
+<div class="row">
+    <div class="col-md-4">
+            <form asp-action="GuncelleYap" asp-controller="TblDbIceceklers" method="post" enctype="multipart/form-data">
+                >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IcecekAd" class="control-label"></label>
+                <input asp-for="IcecekAd" class="form-control" />
+                <span asp-validation-for="IcecekAd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IcecekFiyat" class="control-label"></label>
+                <input asp-for="IcecekFiyat" class="form-control" />
+                <span asp-validation-for="IcecekFiyat" class="text-danger"></span>
+
+                </div> 
+                <div class="form-group">
+                    <label asp-for="IcecekResim" class="control-label"></label>
+                    <input asp-for="IcecekResim" class="form-control" />
+                    <span asp-validation-for="IcecekResim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="file">Resim Dosyası:</label>
+                    <input type="file" id="file" name="file" class="form-control-file" />
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Guncelle" class="btn btn-primary" />
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
